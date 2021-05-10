@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import restapi from '../url/url';
 import AddNewCourse from './englishcomponents/AddNewCourse';
+import EditCourse from './englishcomponents/EditCourse';
 
-const English = () => {
+const English = (props) => {
 
     const [contentData, setContentData] = useState([]);
 
@@ -50,7 +51,7 @@ const English = () => {
                                 <p className="card-text ">{data.content}</p>
 
                                 <div className=" card-link btn-group">
-                                    {/* <EditEvent event={event} props={props} /> */}
+                                    <EditCourse contentToEdit={data} props={props} />
                                 </div>
                                 <button
                                     type="button"
