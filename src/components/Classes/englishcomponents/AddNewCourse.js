@@ -32,6 +32,7 @@ const AddNewCourse = () => {
                                 type="text"
                                 className="form-control"
                                 placeholder="Title"
+                                required
 
                             />
 
@@ -40,80 +41,11 @@ const AddNewCourse = () => {
                                 type="text"
                                 className="form-control"
                                 placeholder="Description"
+                                required
                             // value={notesData}
                             // onChange={e => setNotesData(e.target.value)}
                             ></textarea>
 
-                            {/* {noteError.length > 0 &&
-                                <span className='error' style={{ color: 'red' }}>{noteError} </span>} */}
-
-                            <label></label>
-                            <textarea
-                                type="text"
-                                placeholder="Location"
-                                className="form-control"
-                            // value={locationData}
-                            // onChange={e => setLocationData(e.target.value)}
-
-                            ></textarea>
-                            {/* {locationError.length > 0 &&
-                                <div className='error' style={{ color: 'red' }}>{locationError}</div>} */}
-
-                            <div>Pick the start and end Date here</div>
-                            {/* <DatePicker
-                                placeholder="yyyy-mm-dd"
-                                className="form-control"
-                                minDate={new Date()}
-                                showTimeSelect
-                                dateFormat={"yyyy-MM-dd hh:mm "}
-                                selected={startDate}
-                                onChange={e => startDateHanlder(e)} /> */}
-                            <div>to </div>
-                            {/* <DatePicker
-                                placeholder="yyyy-MM-dd"
-                                className="form-control"
-                                minDate={new Date()}
-                                showTimeSelect
-                                dateFormat={"yyyy-MM-dd hh:mm "}
-                                selected={endDate}
-                                onChange={e => endDateHanlder(e)} /> */}
-                            <div> --- </div>
-                            <label>From</label>
-                            <input
-                                type="text"
-                                placeholder="hh:mm - hh:mm"
-                                className="form-control"
-                            // value={durationData}
-                            // onChange={e => setDurationData(e.target.value)}
-                            />
-                            {/* {durationDateError.length > 0 &&
-                                <div className='error' style={{ color: 'red' }}>{durationDateError}</div>} */}
-
-
-                            <label>Start Date</label>
-                            <input
-                                type="text"
-                                className="form-control"
-                                placeholder="yyyy-mm-dd"
-                            // value={startData}
-                            // onChange={e => setStartData(e.target.value)}
-
-                            />
-                            {/* 
-                            {startDateError.length > 0 &&
-                                <div className='error' style={{ color: 'red' }}>{startDateError}</div>} */}
-
-                            <label>End Date </label>
-                            <input
-                                type="text"
-                                placeholder="yyyy-mm-dd"
-                                className="form-control"
-                            // value={endData}
-                            // onChange={e => setEndData(e.target.value)} 
-                            />
-                            {/* 
-                            {endDateError.length > 0 &&
-                                <span className='error' style={{ color: 'red' }}>{endDateError}</span>} */}
 
                         </div>
 
