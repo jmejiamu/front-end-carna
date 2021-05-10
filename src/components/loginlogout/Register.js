@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Login = () => {
+const Register = () => {
     return (
         <div class="container">
             <div class="row">
@@ -22,6 +22,10 @@ const Login = () => {
                                     <input type="text" class="form-control" />
                                 </div>
                                 <div class="form-group">
+                                    <label class="form-control-label">EMAIL</label>
+                                    <input type="text" class="form-control" />
+                                </div>
+                                <div class="form-group">
                                     <label class="form-control-label">PASSWORD</label>
                                     <input type="password" class="form-control" i />
                                 </div>
@@ -31,12 +35,12 @@ const Login = () => {
 
                                     </div>
                                     <div class="col-lg-6 login-btm login-button">
-                                        <button type="submit" class="btn btn-outline-primary">LOGIN</button>
-                                        <Link to="/register">
-                                            <button type="submit" class="btn btn-outline-primary">Register</button>
+                                        <button type="submit" class="btn btn-outline-primary">REGISTER</button>
+                                        <Link to="/">
+                                            <button type="submit" class="btn btn-outline-primary">LOGIN</button>
+
                                         </Link>
                                     </div>
-
                                 </div>
                             </form>
                         </div>
@@ -49,4 +53,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;
