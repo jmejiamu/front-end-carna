@@ -31,7 +31,9 @@ const Login = () => {
 
                                     </div>
                                     <div class="col-lg-6 login-btm login-button">
-                                        <button type="submit" class="btn btn-outline-primary">LOGIN</button>
+                                        <Link to="/dashboard">
+                                            <button type="submit" class="btn btn-outline-primary">LOGIN</button>
+                                        </Link>
                                         <Link to="/register">
                                             <button type="submit" class="btn btn-outline-primary">Register</button>
                                         </Link>

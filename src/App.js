@@ -5,6 +5,7 @@ import '../src/components/styles/styles.scss';
 import Login from './components/loginlogout/Login';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import Register from './components/loginlogout/Register';
+import Dashboard from './components/Dashboard/Dashboard';
 
 const App = () => {
     return (
@@ -13,6 +14,7 @@ const App = () => {
                 <Switch>
                     <Login exact path='/' render={props => <Register {...props} />} />
                     <Route exact path='/register' render={props => <Register {...props} />} />
+                    <Route exact path='/dashboard' render={props => <Dashboard {...props} />} />
 
                 </Switch>
 
