@@ -1,5 +1,5 @@
 const restapi = {
-  carna: 'http://localhost'
+  carna: 'http://192.168.1.69:3001'
 }
 
 export default restapi;
