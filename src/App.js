@@ -8,6 +8,7 @@ import Register from './components/loginlogout/Register';
 import Dashboard from './components/Dashboard/Dashboard';
 import restapi from './components/url/url';
 import { useEffect, useState } from 'react';
+import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify'
 
 toast.configure();

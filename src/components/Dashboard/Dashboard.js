@@ -1,9 +1,38 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Data from '../Chart/Data';
 import NavBar from '../NavBar/NavBar';
+import restapi from '../url/url';
 
 
 const Dashboard = () => {
+
+    const [userName, setUserName] = useState("")
+    const [userId, setUserId] = useState("")
+    const [userEmail, setUserEmail] = useState("")
+    const [userPicture, setUserPiture] = useState("")
+
+
+    const getUserData = async () => {
+        try {
+            const response = await fetch(restapi.carna + '/data', {
+                method: 'GET',
+                headers: { token: localStorage.jwt }
+            })
+            const data = await response.json();
+            // pass the id
+            // console.log(data);
+            setUserName(data.name)
+            setUserId(data.id)
+            setUserPiture(data.picture)
+            setUserEmail(data.email)
+        } catch (error) {
+            console.error(error.message);
+        }
+    }
+
+    useEffect(() => {
+        getUserData();
+    }, [])
     return (
 
         <>
