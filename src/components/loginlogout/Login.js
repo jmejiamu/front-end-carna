@@ -60,7 +60,7 @@ const Login = (props) => {
                                 <div className="form-group">
                                     <label class="form-control-label">EMAIL</label>
                                     <input
-                                        type="email"
+                                        type="text"
                                         className="form-control"
                                         value={email}
                                         onChange={e => setEmail(e.target.value)}

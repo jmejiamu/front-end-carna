@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Data from '../Chart/Data';
 import NavBar from '../NavBar/NavBar';
 import restapi from '../url/url';
@@ -53,6 +54,18 @@ const Dashboard = () => {
                             <i class="fa fa-handshake-o" aria-hidden="true"></i> Partnerships
                         </a>
                     </li>
+                    <li class="header">Manage Classes</li>
+                    <li>
+                        <Link to="/english">
+                            <i class="fa fa-users" aria-hidden="true"></i> English
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/spanish">
+                            <i class="fa fa-cog" aria-hidden="true"></i> Spanish
+                        </Link>
+                    </li>
+
                     <li class="header">Options</li>
                     <li>
                         <a href="#users">
@@ -69,6 +82,7 @@ const Dashboard = () => {
                             <i class="fa fa-info-circle" aria-hidden="true"></i> Helps
                         </a>
                     </li>
+
                 </ul>
             </div>
 

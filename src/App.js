@@ -10,6 +10,8 @@ import restapi from './components/url/url';
 import { useEffect, useState } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify'
+import English from './components/Classes/English';
+import Spanish from './components/Classes/Spanish';
 
 toast.configure();
 
@@ -43,6 +45,8 @@ const App = () => {
                     <Route exact={true} path='/' render={props => !isAuthenticated ? <Login {...props} setAuth={setAuth} /> : <Redirect to="/dashboard" />} />
                     <Route exact path='/register' render={props => <Register {...props} />} />
                     <Route exact path='/dashboard' render={props => <Dashboard {...props} />} />
+                    <Route exact path='/english' render={props => <English {...props} />} />
+                    <Route exact path='/spanish' render={props => <Spanish {...props} />} />
 
                 </Switch>
 

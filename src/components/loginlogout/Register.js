@@ -38,7 +38,6 @@ const Register = () => {
                                         <button type="submit" class="btn btn-outline-primary">REGISTER</button>
                                         <Link to="/">
                                             <button type="submit" class="btn btn-outline-primary">LOGIN</button>
-
                                         </Link>
                                     </div>
                                 </div>
