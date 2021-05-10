@@ -1,12 +1,13 @@
 import React from 'react';
 import Data from '../Chart/Data';
+import NavBar from '../NavBar/NavBar';
 
 
 const Dashboard = () => {
     return (
 
         <>
-
+            <NavBar />
             <div class="sidebar-container">
                 <div class="sidebar-logo">
                     Carna
@@ -14,28 +15,28 @@ const Dashboard = () => {
                 <ul class="sidebar-navigation">
                     <li class="header">User name </li>
                     <li>
-                        <a href="#t-shirt">
+                        <a href="#home">
                             <i class="fa fa-home" aria-hidden="true"></i> Home
                         </a>
                     </li>
                     <li>
-                        <a href="#jackets">
+                        <a href="#part">
                             <i class="fa fa-handshake-o" aria-hidden="true"></i> Partnerships
                         </a>
                     </li>
                     <li class="header">Options</li>
                     <li>
-                        <a href="#wallets">
+                        <a href="#users">
                             <i class="fa fa-users" aria-hidden="true"></i> Users
                         </a>
                     </li>
                     <li>
-                        <a href="#hats">
+                        <a href="#settings">
                             <i class="fa fa-cog" aria-hidden="true"></i> Setting
                         </a>
                     </li>
                     <li>
-                        <a href="#watch">
+                        <a href="#help">
                             <i class="fa fa-info-circle" aria-hidden="true"></i> Helps
                         </a>
                     </li>
