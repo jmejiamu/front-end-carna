@@ -1,9 +1,35 @@
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
+import restapi from '../../url/url';
 
 const AddNewCourse = () => {
 
     const [title, setTitle] = useState();
     const [content, setContent] = useState();
+
+    const submitData = async (e) => {
+
+        try {
+
+            const body = {
+                title: title,
+                content: content
+            }
+            const response = await fetch(restapi.carna + '/newenglish', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(body)
+            })
+
+            const dataRes = await response.json();
+            toast.success(dataRes.response)
+            setTitle('')
+            setContent('')
+        } catch (error) {
+            console.error(error.message);
+        }
+
+    }
 
     return (
         <div>
@@ -33,6 +59,8 @@ const AddNewCourse = () => {
                                 className="form-control"
                                 placeholder="Title"
                                 required
+                                value={title}
+                                onChange={e => setTitle(e.target.value)}
 
                             />
 
@@ -42,8 +70,8 @@ const AddNewCourse = () => {
                                 className="form-control"
                                 placeholder="Description"
                                 required
-                            // value={notesData}
-                            // onChange={e => setNotesData(e.target.value)}
+                                value={content}
+                                onChange={e => setContent(e.target.value)}
                             ></textarea>
 
 
@@ -54,8 +82,8 @@ const AddNewCourse = () => {
                             <button
                                 type="submit"
                                 className="btn btn-danger"
-                            //data-dismiss="modal"
-                            // onClick={e => updateDataEvent(e.target.value)}
+                                data-dismiss="modal"
+                                onClick={e => submitData(e.target.value)}
                             >ADD</button>
 
                             <button type="button" className="btn btn-danger" data-dismiss="modal">Close</button>
