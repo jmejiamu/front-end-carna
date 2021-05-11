@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import NavBar from '../NavBar/NavBar';
+import Pagination from '../Pagination/Pagination';
 import restapi from '../url/url';
 import AddNewCourse from './englishcomponents/AddNewCourse';
 import EditCourse from './englishcomponents/EditCourse';
@@ -8,11 +9,14 @@ import EditCourse from './englishcomponents/EditCourse';
 const English = (props) => {
 
     const [userId, setUserId] = useState("")
-    // const [userEmail, setUserEmail] = useState("");
     const [picture, setPicture] = useState("")
     const [userName, setUserName] = useState("");
 
     const [contentData, setContentData] = useState([]);
+
+    // Pagination
+    const [currentPage, setCurrentPage] = useState(1);
+    const [conPerPage] = useState(5);
 
     const deleteData = async (id) => {
         try {
@@ -48,7 +52,6 @@ const English = (props) => {
             })
             const data = await response.json()
             setUserName(data.name)
-            // setUserEmail(data.email)
             setPicture(data.picture)
             setUserId(data.id)
         } catch (error) {
@@ -60,13 +63,22 @@ const English = (props) => {
         getData();
         getUserInfo();
     }, [])
+
+    // PAGINATION
+    // Get the current img 
+    const indexOfLastCon = currentPage * conPerPage;
+    const indexOfFirstCon = indexOfLastCon - conPerPage;
+    const currentContent = contentData.slice(indexOfFirstCon, indexOfLastCon);
+
+    // Change Page
+    const paginate = (contentNumber) => setCurrentPage(contentNumber);
     return (
         <div className="container">
             <NavBar name={userName} id={userId} picture={picture} />
             <h1 className="margin-english">Englis Course</h1>
             <AddNewCourse />
             {contentData.length === 0 ? <h1 className="text-center mt-5 mb-5 ">There is not events yet!{'😌'}</h1> : (
-                contentData.map(data => {
+                currentContent.map(data => {
                     return (
                         <div className="card mb-5" key={data.id} >
 
@@ -87,6 +99,8 @@ const English = (props) => {
                     )
                 })
             )}
+
+            <Pagination conPerPage={conPerPage} totalCont={contentData.length} paginate={paginate} />
 
         </div>
     );
