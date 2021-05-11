@@ -74,7 +74,7 @@ const English = (props) => {
     const paginate = (contentNumber) => setCurrentPage(contentNumber);
     return (
         <div className="container">
-            <NavBar name={userName} id={userId} picture={picture} />
+            <NavBar setAuth={props.setAuth} name={userName} id={userId} picture={picture} />
             <h1 className="margin-english">Englis Course</h1>
             <AddNewCourse />
             {contentData.length === 0 ? <h1 className="text-center mt-5 mb-5 ">There is not events yet!{'😌'}</h1> : (
