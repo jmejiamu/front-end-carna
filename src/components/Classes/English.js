@@ -61,10 +61,10 @@ const English = (props) => {
         getUserInfo();
     }, [])
     return (
-        <div>
+        <div className="container">
             <NavBar name={userName} id={userId} picture={picture} />
+            <h1 className="margin-english">Englis Course</h1>
             <AddNewCourse />
-            <h1>Englis Course</h1>
             {contentData.length === 0 ? <h1 className="text-center mt-5 mb-5 ">There is not events yet!{'😌'}</h1> : (
                 contentData.map(data => {
                     return (

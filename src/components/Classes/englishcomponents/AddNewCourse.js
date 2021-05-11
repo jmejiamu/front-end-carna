@@ -33,7 +33,7 @@ const AddNewCourse = (props) => {
     }
 
     return (
-        <div>
+        <div >
             <button
                 type="button"
                 className="btn btn btn-danger mb-4  mt-5 d-flex justify-content-end"

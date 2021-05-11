@@ -9,36 +9,35 @@ const Dashboard = () => {
 
     const [userName, setUserName] = useState("")
     const [userId, setUserId] = useState("")
-    const [userEmail, setUserEmail] = useState("")
-    const [userPicture, setUserPiture] = useState("")
+    // const [userEmail, setUserEmail] = useState("")
+    const [picture, setUserPiture] = useState("")
 
 
-    const getUserData = async () => {
+    const getUserInfo = async () => {
         try {
             const response = await fetch(restapi.carna + '/data', {
                 method: 'GET',
                 headers: { token: localStorage.jwt }
             })
             const data = await response.json();
-            // pass the id
-            // console.log(data);
+
             setUserName(data.name)
             setUserId(data.id)
             setUserPiture(data.picture)
-            setUserEmail(data.email)
+            // setUserEmail(data.email)
         } catch (error) {
             console.error(error.message);
         }
     }
 
     useEffect(() => {
-        getUserData();
+        getUserInfo();
     }, [])
     return (
 
         <>
-            <NavBar />
-            <div class="sidebar-container">
+            <NavBar name={userName} id={userId} picture={picture} />
+            <div class="sidebar-container mt-5">
                 <div class="sidebar-logo">
                     Carna
                 </div>
@@ -86,7 +85,7 @@ const Dashboard = () => {
                 </ul>
             </div>
 
-            <div class="content-container">
+            <div class="content-container mt-3">
 
 
                 <div class="container-fluid" id="jackets">
