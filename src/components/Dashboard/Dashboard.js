@@ -5,7 +5,7 @@ import NavBar from '../NavBar/NavBar';
 import restapi from '../url/url';
 
 
-const Dashboard = () => {
+const Dashboard = (props) => {
 
     const [userName, setUserName] = useState("")
     const [userId, setUserId] = useState("")
@@ -36,7 +36,7 @@ const Dashboard = () => {
     return (
 
         <>
-            <NavBar name={userName} id={userId} picture={picture} />
+            <NavBar setAuth={props.setAuth} name={userName} id={userId} picture={picture} />
             <div class="sidebar-container mt-5">
                 <div class="sidebar-logo">
                     Carna

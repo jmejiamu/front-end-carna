@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logout from '../loginlogout/logout';
 
 const NavBar = (props) => {
     return (
@@ -25,7 +26,7 @@ const NavBar = (props) => {
                         >Edit Perfil</a>
 
                         <a className="dropdown-item" href="#home"
-                        // onClick={e => logout(e, props)}
+                            onClick={e => logout(e, props)}
                         >Sing Out</a>
 
                         <Link className="dropdown-item" to="#" >About</Link>

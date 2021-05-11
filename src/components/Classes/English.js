@@ -16,7 +16,7 @@ const English = (props) => {
 
     // Pagination
     const [currentPage, setCurrentPage] = useState(1);
-    const [conPerPage] = useState(5);
+    const [conPerPage] = useState(4);
 
     const deleteData = async (id) => {
         try {
