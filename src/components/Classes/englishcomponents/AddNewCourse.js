@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 import restapi from '../../url/url';
 
-const AddNewCourse = () => {
+const AddNewCourse = (props) => {
 
     const [title, setTitle] = useState();
     const [content, setContent] = useState();
@@ -25,6 +25,7 @@ const AddNewCourse = () => {
             toast.success(dataRes.response)
             setTitle('')
             setContent('')
+            window.location = '/english'
         } catch (error) {
             console.error(error.message);
         }

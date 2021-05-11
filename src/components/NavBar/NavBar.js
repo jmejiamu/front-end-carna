@@ -1,25 +1,35 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const NavBar = () => {
+const NavBar = (props) => {
     return (
         <>
-            <nav className="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-                <a className="navbar-brand" href="#">Carna Admin</a>
+            <nav className=" navbar  navbar-expand-lg  justify-content-between navbar-dark bg-dark" >
+                <a className=" logo-style navbar text-white " href="/">
+                    {/* <img src={logo} width="35" height="35" alt="logo" /> */}
+                    Admin Carna
+                </a>
 
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                    <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
-                        <li className="nav-item active">
-                            <Link to="/">
-                                <a className="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                            </Link>
-                        </li>
+                <ul className="navbar-nav" >
+                    <li className="nav-item"><Link className="nav-link " to="/">Home</Link></li>
 
-                    </ul>
+                </ul>
 
+                <div className="dropdown">
+                    <button className="drop-down-style btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {`Welcome `}<img src={props.picture} width="40" height="40" class="rounded-circle"></img> </button>
+                    <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a className="dropdown-item" href="#home"
+                            data-toggle="modal"
+                            data-target={`#id${props.id}`}
+                        >Edit Perfil</a>
+
+                        <a className="dropdown-item" href="#home"
+                        // onClick={e => logout(e, props)}
+                        >Sing Out</a>
+
+                        <Link className="dropdown-item" to="/about" >About</Link>
+                    </div>
                 </div>
             </nav>
         </>

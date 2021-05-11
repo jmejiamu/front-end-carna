@@ -1,6 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
+import restapi from '../../url/url';
 
 const EditCourse = (props) => {
+    const [title, setTitle] = useState(props.contentToEdit.title)
+    const [content, setContent] = useState(props.contentToEdit.content)
+
+    const updateData = async () => {
+        try {
+            const body = {
+                title: title,
+                content: content,
+
+            }
+            const response = await fetch(restapi.carna + `/updateenglish/${props.contentToEdit.id}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(body)
+            })
+        } catch (error) {
+            console.error(error);
+        }
+        window.location = '/english'
+    }
     return (
         <div>
             <button
@@ -26,15 +47,15 @@ const EditCourse = (props) => {
                             <input
                                 type="text"
                                 className="form-control"
-                            // value={descriptionData}
-                            // onChange={e => setDescriptionData(e.target.value)}
+                                value={title}
+                                onChange={e => setTitle(e.target.value)}
                             />
                             <label>Description</label>
                             <textarea
                                 type="text"
                                 className="form-control"
-                            // value={notesData}
-                            // onChange={e => setNotesData(e.target.value)}
+                                value={content}
+                                onChange={e => setContent(e.target.value)}
                             ></textarea>
 
 
@@ -46,7 +67,7 @@ const EditCourse = (props) => {
                                 type="button"
                                 className="btn btn-danger"
                                 data-dismiss="modal"
-                            // onClick={e => updateDataEvent(e.target.value)}
+                                onClick={e => updateData(e.target.value)}
                             >Edit</button>
 
                             <button type="button" className="btn btn-danger" data-dismiss="modal">Close</button>

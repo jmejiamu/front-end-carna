@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
+import NavBar from '../NavBar/NavBar';
 import restapi from '../url/url';
 import AddNewCourse from './englishcomponents/AddNewCourse';
 import EditCourse from './englishcomponents/EditCourse';
 
 const English = (props) => {
+
+    const [userId, setUserId] = useState("")
+    // const [userEmail, setUserEmail] = useState("");
+    const [picture, setPicture] = useState("")
+    const [userName, setUserName] = useState("");
 
     const [contentData, setContentData] = useState([]);
 
@@ -34,13 +40,31 @@ const English = (props) => {
         }
     }
 
+    const getUserInfo = async () => {
+        try {
+            const response = await fetch(restapi.carna + '/data', {
+                method: 'GET',
+                headers: { token: localStorage.jwt }
+            })
+            const data = await response.json()
+            setUserName(data.name)
+            // setUserEmail(data.email)
+            setPicture(data.picture)
+            setUserId(data.id)
+        } catch (error) {
+            console.error(error.message);
+        }
+    }
+
     useEffect(() => {
-        getData()
+        getData();
+        getUserInfo();
     }, [])
     return (
         <div>
+            <NavBar name={userName} id={userId} picture={picture} />
             <AddNewCourse />
-            <h1>Englis</h1>
+            <h1>Englis Course</h1>
             {contentData.length === 0 ? <h1 className="text-center mt-5 mb-5 ">There is not events yet!{'😌'}</h1> : (
                 contentData.map(data => {
                     return (
