@@ -14,3 +14,6 @@
 
 ### Edit
 ![Edit](https://user-images.githubusercontent.com/27458911/118071042-d9a81800-b35b-11eb-865c-c052c71d194f.jpg)
+
+### Delete
+![delete](https://user-images.githubusercontent.com/27458911/118071098-f2b0c900-b35b-11eb-9875-d5335c3ab86b.jpg)
