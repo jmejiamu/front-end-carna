@@ -37,7 +37,7 @@ const EditCourse = (props) => {
 
 
                         <div className="modal-header">
-                            <h4 className="modal-title modal-style">Edit Event</h4>
+                            <h4 className="modal-title modal-style">Edit Course</h4>
                             <button type="button" className="close" data-dismiss="modal">&times;</button>
                         </div>
 
