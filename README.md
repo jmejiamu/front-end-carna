@@ -21,3 +21,6 @@
 ### Add Course
 ![Addcourse](https://user-images.githubusercontent.com/27458911/118071143-107e2e00-b35c-11eb-970a-01df31793617.jpg)
 
+# Technologies used
+
+
