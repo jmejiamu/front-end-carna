@@ -17,3 +17,7 @@
 
 ### Delete
 ![delete](https://user-images.githubusercontent.com/27458911/118071098-f2b0c900-b35b-11eb-9875-d5335c3ab86b.jpg)
+
+### Add Course
+![Addcourse](https://user-images.githubusercontent.com/27458911/118071143-107e2e00-b35c-11eb-970a-01df31793617.jpg)
+
