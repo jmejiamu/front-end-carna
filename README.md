@@ -28,3 +28,4 @@
 * Hooks
 * Localstores
 * JSonWentoken
+* Pagination
